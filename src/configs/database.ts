@@ -1,13 +1,14 @@
 "use strict";
 
-const mongoAuth = require("./app").mongoAuth;
+import app from "./app";
+
 /**
  * @global Database default config
  */
-module.exports = {
+export default {
   dbname: process.env.DB_NAME,
-  host: mongoAuth.host,
-  port: mongoAuth.port,
+  host: app.mongoDevices.host,
+  port: app.mongoDevices.port,
   options: {
     useNewUrlParser: true,
     useUnifiedTopology: true,

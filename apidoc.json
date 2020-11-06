@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Devices Microservice",
   "title": "Devices Microservice Api",
-  "url": "http://ms-devices:80",
-  "sampleUrl": "http://ms-devices:80",
-  "order": ["System"]
+  "url": "http://ms-devices:80/devices",
+  "sampleUrl": "http://ms-devices:80/devices",
+  "order": ["Test","System"]
 }
