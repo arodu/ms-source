@@ -26,7 +26,7 @@ app.use(cors());
 
 //Routes
 const routes = {
-  '/test/': require("./routes/test"),
+  '/default/': require("./routes/default"),
   '/': require("./routes/index"),
 }
 app = appRouterList(app, routes, '/devices');

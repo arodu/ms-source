@@ -6,14 +6,14 @@ import { Schema, Document } from 'mongoose';
 const mongoose = mongooseClient(database);
 
 
-export interface TestInterface extends Document {
+export interface DefaultInterface extends Document {
   name: String,
   datetime: Date,
   type: String,
 }
 
 
-export const TestSchema:Schema = new Schema({
+export const DefaultSchema:Schema = new Schema({
   name: {
     type: String,
     required: true,
@@ -30,4 +30,4 @@ export const TestSchema:Schema = new Schema({
   },
 });
 
-export const testModel = mongoose.model<TestInterface>("test_collection", TestSchema);
+export const defaultModel = mongoose.model<DefaultInterface>("default_collection", DefaultSchema);
