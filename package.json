@@ -1,0 +1,48 @@
+{
+  "name": "ms-devices",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && nodemon ./bin/www",
+    "seeds": "NODE_ENV=test node ./dev/index.js",
+    "postinstall": "link-module-alias",
+    "docs": "apidoc -i src/ -o docs/",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "version": "git log -1 --format=\"app:    (\"%ai\") \"%H; cd src/plugins/TS-lib-utils; git log -1 --format=\"utils:  (\"%ai\") \"%H; cd ../../.."
+  },
+  "dependencies": {
+    "authenticator": "^1.1.5",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "jwt-simple": "^0.5.6",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.12",
+    "morgan": "~1.9.1",
+    "sha1": "^1.1.1",
+    "typescript": "^4.0.3",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/module-alias": "^2.0.0",
+    "@types/mongoose": "^5.7.36",
+    "@types/yup": "^0.29.9",
+    "jest": "^25.5.4",
+    "link-module-alias": "^1.2.0",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2"
+  },
+  "_moduleAliases": {
+    "@ts-utils": "./dist/plugins/TS-lib-utils/index.js",
+    "@configs": "./dist/configs/",
+    "@dist": "./dist/"
+  }
+}
