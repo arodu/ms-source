@@ -1,0 +1,3 @@
+[submodule "src/plugins/TS-lib-utils"]
+	path = src/plugins/TS-lib-utils
+	url = git@ssh.dev.azure.com:v3/Alpha-Research-Deutschland/TerminService/TS-lib-utils
