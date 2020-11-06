@@ -7,6 +7,6 @@ import { sessionMiddleware } from "@ts-utils";
 import TestController from "../controllers/TestController";
 
 router.get("/", TestController.test);
-//router.post("/individual", sessionMiddleware, MailerController.sendIndividual);
+router.post("/individual", TestController.test);
 
 module.exports = router;
