@@ -1,13 +1,13 @@
 "use strict";
 require("module-alias/register");
 
-const express = require("express");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const logger = require("morgan");
-const cors = require("cors");
+import express from "express";
+import path from "path";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+import cors from "cors";
 
-const {appRouterList} = require("@ts-utils");
+import  {appRouterList} from "@ts-utils";
 
 //Enviroments variables
 require("dotenv").config({

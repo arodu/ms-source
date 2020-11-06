@@ -1,6 +1,6 @@
 "use strict";
 
-const { HOSTS } = require("@ts-utils");
+import { HOSTS } from "@ts-utils";
 const { mongoAuth, msDevices } = HOSTS;
 
 export default {
