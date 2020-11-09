@@ -23,21 +23,21 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
-var priv_app = { ...app };
+var privateApp = { ...app };
 
 //Routes
-app = appRouterList(app, '/devices', {
-  '/default/': require("./routes/default"),
-  '/': require("./routes/index"),
+app = appRouterList(app, "/devices", {
+  "/default/": require("./routes/default"),
+  "/": require("./routes/index"),
 });
 
 //Routes
-priv_app = appRouterList(priv_app, '/devices', {
-  '/default/': require("./routes/default"),
-  '/': require("./routes/index"),
+privateApp = appRouterList(privateApp, "/devices", {
+  "/default/": require("./routes/default"),
+  "/": require("./routes/index"),
 });
-
 
 module.exports = {
-  app, priv_app
+  app,
+  privateApp,
 };
