@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import cors from "cors";
 
-import  {appRouterList} from "@ts-utils";
+import { appRouterList } from "@ts-utils";
 
 //Enviroments variables
 require("dotenv").config({
@@ -24,7 +24,6 @@ app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
 var priv_app = { ...app };
-
 
 //Routes
 app = appRouterList(app, '/devices', {
