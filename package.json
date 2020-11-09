@@ -7,7 +7,7 @@
     "start": "npm run build && nodemon ./bin/www",
     "seeds": "NODE_ENV=test node ./dev/index.js",
     "postinstall": "link-module-alias",
-    "docs": "apidoc -i src/ -o docs/",
+    "docs": "apidoc -i src/ -o docs/ --private true",
     "test": "jest",
     "test:watch": "jest --watch",
     "version": "git log -1 --format=\"app:    (\"%ai\") \"%H; cd src/plugins/TS-lib-utils; git log -1 --format=\"utils:  (\"%ai\") \"%H; cd ../../.."
