@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import cors from "cors";
 
-import  {appRouterList} from "@ts-utils";
+import { appRouterList } from "@ts-utils";
 
 //Enviroments variables
 require("dotenv").config({
@@ -23,12 +23,11 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
-
 //Routes
 const routes = {
-  '/default/': require("./routes/default"),
-  '/': require("./routes/index"),
-}
-app = appRouterList(app, routes, '/devices');
+  "/test/": require("./routes/test"),
+  "/": require("./routes/index"),
+};
+app = appRouterList(app, routes, "/devices");
 
 module.exports = app;
