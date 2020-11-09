@@ -23,12 +23,22 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
+var priv_app = { ...app };
+
 
 //Routes
-const routes = {
+app = appRouterList(app, '/devices', {
   '/default/': require("./routes/default"),
   '/': require("./routes/index"),
-}
-app = appRouterList(app, routes, '/devices');
+});
 
-module.exports = app;
+//Routes
+priv_app = appRouterList(priv_app, '/devices', {
+  '/default/': require("./routes/default"),
+  '/': require("./routes/index"),
+});
+
+
+module.exports = {
+  app, priv_app
+};
