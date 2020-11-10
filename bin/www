@@ -6,7 +6,7 @@ require("module-alias/register");
  * Module dependencies.
  */
 
-const { app, privateApp } = require("../dist/app");
+const { app } = require("../dist/app");
 //const debug = require("debug")("crud-nodejs-mongodb:server");
 const config = require("../dist/configs/app.js");
 const http = require("http");
@@ -16,24 +16,15 @@ const http = require("http");
  */
 
 const port = normalizePort( process.env.PORT || config.default.port );
-const privatePort = normalizePort( process.env.PORT || config.default.privatePort );
 app.set("port", port);
+
 /**
  * Create HTTP server.
  */
-
 const server = http.createServer(app);
 server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
-
-/**
- * Create Private HTTP server.
- */
-const privateServer = http.createServer(privateApp);
-privateServer.listen(privatePort);
-privateServer.on("error", onError);
-privateServer.on("listening", onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -87,6 +78,7 @@ function onError(error) {
 
 function onListening() {
   let addr = this.address();
+  console.log(addr)
   let bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   console.log("Listening on " + bind);
 }

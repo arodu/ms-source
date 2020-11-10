@@ -24,25 +24,12 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
-/** For private server */
-var privateApp = express();
-privateApp = Object.assign(privateApp, app);
-
-//Public Routes
 app = appRouterList(app, "/devices", {
   "/default/": require("./routes/default"),
   "/": require("./routes/index"),
 });
 
-//Private Routes
-privateApp = appRouterList(privateApp, "/devices", {
-  "/default/": require("./routes/default"),
-  "/": require("./routes/index"),
-});
-
 module.exports = {
-  app,
-  privateApp,
+  app
 };
-
 
