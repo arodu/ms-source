@@ -23,13 +23,21 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
-var privateApp = { ...app };
-
 //Routes
 app = appRouterList(app, "/devices", {
   "/default/": require("./routes/default"),
   "/": require("./routes/index"),
 });
+
+
+var privateApp = express();
+
+privateApp.use(logger("dev"));
+privateApp.use(express.json());
+privateApp.use(express.urlencoded({ extended: true }));
+privateApp.use(cookieParser());
+privateApp.use("/docs", express.static(path.join(__dirname, "../docs")));
+privateApp.use(cors());
 
 //Routes
 privateApp = appRouterList(privateApp, "/devices", {
@@ -41,3 +49,5 @@ module.exports = {
   app,
   privateApp,
 };
+
+
