@@ -14,6 +14,7 @@ require("dotenv").config({
   path: process.env.NODE_ENV === "test" ? ".env.test" : ".env",
 });
 
+/** For public server */
 var app = express();
 
 app.use(logger("dev"));
@@ -23,15 +24,19 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
-var privateApp = { ...app };
+/**
+ * For private server
+ */
+var privateApp = express();
+privateApp = Object.assign(privateApp, app);
 
-//Routes
+//Public Routes
 app = appRouterList(app, "/devices", {
   "/default/": require("./routes/default"),
   "/": require("./routes/index"),
 });
 
-//Routes
+//Private Routes
 privateApp = appRouterList(privateApp, "/devices", {
   "/default/": require("./routes/default"),
   "/": require("./routes/index"),
