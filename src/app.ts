@@ -24,12 +24,11 @@ app.use(cookieParser());
 app.use("/docs", express.static(path.join(__dirname, "../docs")));
 app.use(cors());
 
-app = appRouterList(app, "/devices", {
-  "/default/": require("./routes/default"),
-  "/": require("./routes/index"),
+app = appRouterList(app, "/devices/", {
+  "public/default/": require("./routes/default"),
+  //"/": require("./routes/index"),
 });
 
 module.exports = {
   app
 };
-

@@ -14,7 +14,7 @@ class DefaultController extends Controller {
   }
 
   /**
-   * @api {get} /default/ default index endpoint
+   * @api {get} /public/default/ default index endpoint
    * @apiGroup DefaultController
    * @apiDescription Testing controller
    *
@@ -24,11 +24,9 @@ class DefaultController extends Controller {
   }
 
   /**
-   * @api {get} /default/:id default view endpoint
+   * @api {get} /public/default/:id default view endpoint
    * @apiGroup DefaultController
    * @apiDescription Testing controller
-   * 
-   * @apiSampleRequest http://ms-devices:5000/devices
    *  
    * @apiParam id 
    */
