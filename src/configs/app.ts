@@ -8,6 +8,5 @@ export default {
   debug: true,
   salt: 2,
   port: msDevices.port,
-  privatePort: msDevices.privatePort,
   mongoDevices: mongoAuth,
 };
