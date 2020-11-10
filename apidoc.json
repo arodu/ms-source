@@ -4,6 +4,6 @@
   "description": "Devices Microservice",
   "title": "Devices Microservice Api",
   "url": "/devices",
-  "sampleUrl": "http://ms-devices:80/devices",
+  "sampleUrl": "http://ms-devices:5050/devices",
   "order": ["DefaultController","System"]
 }
